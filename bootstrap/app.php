@@ -23,7 +23,7 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+$app->withFacades();
 
 // $app->withEloquent();
 
@@ -98,5 +98,10 @@ $app->router->group([
 ], function ($router) {
     require __DIR__.'/../routes/web.php';
 });
+
+// $app->configureMonologUsing(function($monolog) {
+//     $monolog->pushHandler(new \Monolog\Handler\StreamHandler('php://stderr', \Monolog\Logger::WARNING));
+//     return $monolog;
+// });
 
 return $app;

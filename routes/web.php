@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/test','EventController@bot');
-$router->post('/api/message','EventController@respondMessage');
+$router->post('/api/message','EventController@eventMessage');
 
 
 

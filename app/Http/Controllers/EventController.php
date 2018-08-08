@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Classes\LineService;
 use Illuminate\Http\Request;
+use Log;
 
 
 class EventController extends BaseController
@@ -19,7 +20,10 @@ class EventController extends BaseController
     }
 
     public function eventMessage(Request $request){
-        dd($request->all());
+        // dd($request->all());
+        Log::info('xxx',$request->all());
+
+        echo "OK";
         // $request = file_get_contents('php://input');
         // $request_array = json_encode($request,true);
         // $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . env('LINE_TOKEN'));
