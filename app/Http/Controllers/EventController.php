@@ -199,7 +199,7 @@ class EventController extends BaseController
                     }
                     }}]}';
                     $post_body = $data;
-                    $send_result =send_reply_message($API_URL.'/push',$POST_HEADER,$post_body);
+                    $send_result =send_reply_message(env('LINE_API_URL').'/push',$POST_HEADER,$post_body);
                             
                          }
 
