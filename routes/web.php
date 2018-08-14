@@ -16,8 +16,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/test','EventController@bot');
-$router->post('/api/message','EventController@eventMessage');
+$router->post('/api/message','EventController@eventMessage', function(){
+     return (new Response($content, $status))
+                  ->header('Content-Type', $value);
+});
 
 
 

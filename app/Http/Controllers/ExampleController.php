@@ -20,12 +20,6 @@ class ExampleController extends BaseController
     }
 
 
-    public function bot() {
-        $line = new LineService();
-        $line->callMessage();
-    }
 
-    public function respondMessage(Request $request) {
-        dd($request->all());
-    }
+
 }
