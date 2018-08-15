@@ -21,13 +21,13 @@ class EventController extends BaseController
 
     public function eventMessage(Request $request){
        $request_array = $request->all();
-
-$API_URL = env('LINE_API_URL');
-$ACCESS_TOKEN = env('LINE_TOKEN');
-$channelSecret = env('LINE_SECRET');
-$POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
+        error_reporting(~E_NOTICE);
+        $API_URL = env('LINE_API_URL');
+        $ACCESS_TOKEN = env('LINE_TOKEN');
+        $channelSecret = env('LINE_SECRET');
+        $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
        
-        if ( sizeof($request_array['events']) > 0 ) {
+    if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         $reply_message = '';
         $reply_token = $event['replyToken'];
